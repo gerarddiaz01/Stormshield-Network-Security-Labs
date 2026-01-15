@@ -37,10 +37,10 @@ Voici la configuration réseau que j'ai auditée et utilisée pour ce déploieme
 J'ai d'abord validé la configuration IP de mon poste d'administration et les interfaces du firewall via la console CLI.
 
 ![Vérification IP Windows](images/lab01/01-ipconfig.png)
-*Figure 1 : Vérification de l'IP du poste d'administration via ipconfig*
+*Vérification de l'IP du poste d'administration via ipconfig*
 
 ![Vérification Interfaces Firewall](images/lab01/02-firewall-ifconfig.png)
-*Figure 2 : Vérification des interfaces du Firewall via la console CLI*
+*Vérification des interfaces du Firewall via la console CLI*
 
 ---
 
@@ -51,7 +51,7 @@ J'ai accédé à l'interface d'administration Web via l'adresse interne `https:/
 Le certificat SSL étant auto-signé par défaut lors de la première initialisation, j'ai validé l'exception de sécurité pour accéder à la mire de connexion.
 
 ![Alerte Certificat SSL](images/lab01/03-ssl-warning.png)
-*Figure 3 : Premier accès HTTPS et validation du certificat*
+*Premier accès HTTPS et validation du certificat*
 
 ### Configuration Générale et Temporelle
 Une fois connecté, j'ai procédé aux réglages fondamentaux pour garantir la fiabilité des traces :
@@ -63,10 +63,10 @@ Une fois connecté, j'ai procédé aux réglages fondamentaux pour garantir la f
     * *Justification :* En analyse SOC, des logs non synchronisés sont inutilisables pour la corrélation d'événements et n'ont aucune valeur juridique.
 
 ![Configuration Système Générale](images/lab01/04-system-config.png)
-*Figure 4 : Configuration des paramètres régionaux et temporels, puis reboot*
+*Configuration des paramètres régionaux et temporels, puis reboot*
 
 ![Configuration NTP](images/lab01/05-ntp-setup.png)
-*Figure 5 : Activation de la synchronisation NTP*
+*Activation de la synchronisation NTP*
 
 ---
 
@@ -76,7 +76,7 @@ Pour permettre l'administration en ligne de commande (CLI) et le dépannage avan
 * **Restriction :** L'accès est protégé par mot de passe.
 
 ![Activation SSH](images/lab01/06-ssh-activation.png)
-*Figure 6 : Activation du service SSH dans le menu Administration*
+*Activation du service SSH dans le menu Administration*
 
 ---
 
@@ -86,10 +86,10 @@ J'ai vérifié l'état des souscriptions de sécurité (IPS, Antivirus, URL Filt
 Pour garantir une protection continue contre les nouvelles menaces, j'ai configuré la **mise à jour automatique** de la licence avec une vérification hebdomadaire.
 
 ![État de la Licence](images/lab01/07-license-status.png)
-*Figure 7 : Vérification des modules de sécurité actifs*
+*Vérification des modules de sécurité actifs*
 
 ![Mise à jour Auto Licence](images/lab01/08-license-autoupdate.png)
-*Figure 8 : Configuration de la mise à jour automatique hebdomadaire*
+*Configuration de la mise à jour automatique hebdomadaire*
 
 ---
 
@@ -102,10 +102,10 @@ Lors de cette manipulation, j'ai expérimenté le mécanisme de verrouillage exc
 * Suite à une reconnexion, j'ai dû explicitement **"Demander les droits d'écriture"** pour pouvoir modifier la configuration, ma session précédente étant passée en Lecture Seule.
 
 ![Changement Mot de Passe](images/lab01/09-password-change.png)
-*Figure 9 : Modification du mot de passe Administrateur*
+*Modification du mot de passe Administrateur*
 
 ![Demande Droits Écriture](images/lab01/10-write-privileges.png)
-*Figure 10 : Mécanisme de demande de privilèges d'écriture*
+*Mécanisme de demande de privilèges d'écriture*
 
 ---
 
@@ -119,7 +119,7 @@ La configuration par défaut du stockage des logs n'est pas adaptée à une surv
     * *Objectif :* Augmenter la durée de rétention des traces de trafic pour permettre des investigations plus longues en cas d'incident.
 
 ![Optimisation Logs](images/lab01/11-log-storage-optimization.png)
-*Figure 11 : Réallocation des quotas de stockage (POP3 désactivé, Réseau augmenté)*
+*Réallocation des quotas de stockage (POP3 désactivé, Réseau augmenté)*
 
 ---
 
@@ -129,7 +129,7 @@ Avant de clore l'intervention, j'ai généré une sauvegarde complète de la con
 Cette étape est indispensable pour assurer un retour à un état stable (Snapshot) avant d'entamer la configuration des politiques de filtrage dans les prochains labs.
 
 ![Sauvegarde Configuration](images/lab01/12-backup-download.png)
-*Figure 12 : Génération et téléchargement du fichier de sauvegarde .na*
+*Génération et téléchargement du fichier de sauvegarde .na*
 
 ---
 *Fin du rapport de Lab 1.*

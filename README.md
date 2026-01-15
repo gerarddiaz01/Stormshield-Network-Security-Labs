@@ -25,10 +25,11 @@ Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pra
 * [00 - Procédures Standards de Déploiement](./00-Deployment-Standard-Procedures.md) : *Hardening initial, cassage du bridge par défaut, gestion des partitions de boot.*
 * [01 - Configuration Initiale & Logs](./01-Initial-Configuration-and-Log-Management.md) : *Sécurisation du plan d'administration et stratégie de rétention des traces.*
 
-### Sécurité & Flux (À venir)
-* *02 - Politique de Filtrage & Objets*
-* *03 - Translation d'adresses (NAT/PAT)*
-* *04 - Infrastructure à Clés Publiques (PKI) & VPN*
+### Architecture & Sécurité
+* [02 - Gestion des Objets Réseaux](./02-Network-Objects-Management.md) : *Structuration de la base d'objets, création de services personnalisés et automatisation (Import CSV).*
+* *03 - Translation d'adresses (NAT/PAT) (À venir)*
+* *04 - Politique de Filtrage & Application Control (À venir)*
+* *05 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
 
 ---
 

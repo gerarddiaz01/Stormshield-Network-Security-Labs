@@ -27,9 +27,10 @@ Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pra
 
 ### Architecture & Sécurité
 * [02 - Gestion des Objets Réseaux](./02-Network-Objects-Management.md) : *Structuration de la base d'objets, création de services personnalisés et automatisation (Import CSV).*
-* *03 - Translation d'adresses (NAT/PAT) (À venir)*
-* *04 - Politique de Filtrage & Application Control (À venir)*
-* *05 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
+* [03 - Configuration Réseau : Interfaces & Routage](./03-Network-Interfaces-and-Routing.md) : *Définition des zones (LAN/DMZ/WAN), configuration du routage statique et mise en place du Proxy DNS.*
+* *04 - Translation d'adresses (NAT/PAT) (À venir)*
+* *05 - Politique de Filtrage & Application Control (À venir)*
+* *06 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
 
 ---
 

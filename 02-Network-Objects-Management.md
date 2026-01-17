@@ -47,16 +47,20 @@ Création de l'objet pour mon poste de gestion situé dans le LAN.
 J'ai créé les objets pour les quatre serveurs critiques hébergés dans la zone démilitarisée (DMZ).
 
 * **Serveur DNS Privé :**
-    ![Création objet SRV DNS](images/lab02/srvdnspriv.png)
+
+![Création objet SRV DNS](images/lab02/srvdnspriv.png)
 
 * **Serveur Web Privé :**
-    ![Création objet SRV WEB](images/lab02/srvwebpriv.png)
+
+![Création objet SRV WEB](images/lab02/srvwebpriv.png)
 
 * **Serveur FTP Privé :**
-    ![Création objet SRV FTP](images/lab02/srvftppriv.png)
+
+![Création objet SRV FTP](images/lab02/srvftppriv.png)
 
 * **Serveur Mail Privé :**
-    ![Création objet SRV MAIL](images/lab02/srvmailpriv.png)
+
+![Création objet SRV MAIL](images/lab02/srvmailpriv.png)
 
 ---
 

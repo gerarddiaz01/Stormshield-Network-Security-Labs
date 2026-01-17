@@ -37,6 +37,7 @@ Voici la configuration réseau que j'ai auditée et utilisée pour ce déploieme
 J'ai d'abord validé la configuration IP de mon poste d'administration et les interfaces du firewall via la console CLI.
 
 ![Vérification IP Windows](images/lab01/01-ipconfig.png)
+
 *Vérification de l'IP du poste d'administration via ipconfig*
 
 ![Vérification Interfaces Firewall](images/lab01/02-firewall-ifconfig.png)

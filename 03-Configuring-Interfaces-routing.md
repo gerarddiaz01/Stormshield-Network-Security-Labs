@@ -63,4 +63,42 @@ J'ai validé que les paramètres IPv4 pointent bien vers la nouvelle adresse de 
 *Vérification de la connectivité client vers le Firewall*
 
 ---
+
+## 4. Configuration du Routage
+
+### Passerelle par défaut
+Pour permettre l'accès à Internet, j'ai défini la passerelle par défaut. Le pare-feu enverra tout le trafic ne correspondant à aucune route spécifique vers le routeur de bordure du fournisseur d'accès.
+
+J'ai créé l'objet routeur `Default_Gw` pointant vers l'IP du routeur FAI :
+* **Nom :** `Default_Gw`
+* **Adresse IP :** `192.36.253.1`
+
+![Création de l'objet Passerelle par défaut](images/lab03/creation_default_gw.png)
+*Configuration de l'objet routeur pour la sortie Internet*
+
+### Routage Statique Inter-Sites
+Afin de permettre la communication avec l'entreprise partenaire (Réseau B), j'ai ajouté une route statique manuelle en utilisant les objets créés lors du module précédent.
+
+* **Réseau de destination :** `LANinB` (`192.168.2.0/24`).
+* **Passerelle :** `FWB` (Firewall de l'entreprise partenaire).
+* **Interface de sortie :** `out`.
+
+![Table de routage statique](images/lab03/laninb.png)
+*Visualisation de la route statique vers le réseau distant LANinB*
+
+---
+
+## 5. Configuration du Proxy Cache DNS
+
+Afin d'optimiser et sécuriser les résolutions de noms de domaine, j'ai activé le service de **Proxy Cache DNS** du pare-feu. Ce mécanisme permet au pare-feu d'intercepter et de relayer les requêtes DNS.
+
+J'ai autorisé spécifiquement le serveur DNS de la DMZ (objet `srvdnspriv`) à utiliser ce service.
+
+* **Module :** Activé (ON).
+* **Client autorisé :** `srvdnspriv`.
+
+![Configuration du Proxy Cache DNS](images/lab03/proxy_dns_cache.png)
+*Activation du cache DNS pour le serveur srvdnspriv*
+
+---
 *Fin du rapport de Lab 3.*

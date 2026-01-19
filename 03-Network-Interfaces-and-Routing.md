@@ -5,6 +5,12 @@
 ## Objectif du Lab
 L'objectif de ce module est de configurer la connectivité réseau du pare-feu Stormshield pour interconnecter les différentes zones de l'infrastructure : le réseau public (WAN), la zone démilitarisée (DMZ) et le réseau interne (LAN). Cette étape transforme le boîtier en routeur central de l'architecture.
 
+## Outils et Technologies
+* **Stormshield SNS** : Pare-feu UTM (Unified Threat Management)
+* **Interfaces réseau** : Configuration des zones WAN, DMZ, LAN
+* **Routage statique** : Interconnexion inter-sites
+* **Proxy Cache DNS** : Optimisation et contrôle des résolutions DNS
+
 ---
 
 ## 1. Préparation de la Politique de Sécurité
@@ -101,6 +107,19 @@ J'ai autorisé spécifiquement le serveur DNS de la DMZ (objet `srvdnspriv`) à 
 
 ![Configuration du Proxy Cache DNS](images/lab03/proxy_dns_cache.png)
 *Activation du cache DNS pour le serveur srvdnspriv*
+
+---
+
+## 6. Implications pour un Analyste SOC
+
+**Segmentation Réseau**
+La séparation WAN/DMZ/LAN est la première ligne de défense. En cas de compromission d'un serveur en DMZ, la segmentation empêche (en théorie) le pivot vers le LAN. Pour un analyste SOC, comprendre cette architecture est essentiel pour tracer un chemin d'attaque.
+
+**Politique "Pass All" — Le Piège Classique**
+Ce lab illustre un scénario fréquent : une règle temporaire "Pass All" oubliée en production. En SOC, c'est souvent la cause d'incidents majeurs. La règle d'or : toute politique permissive doit avoir une date d'expiration ou un ticket de suivi.
+
+**Routage et Visibilité**
+Les routes statiques définissent où le trafic peut aller. Sans connaissance de la table de routage, un analyste peut mal interpréter un flux légitime comme suspect (ou l'inverse). La documentation réseau est un outil d'investigation.
 
 ---
 *Fin du rapport de Lab 3.*

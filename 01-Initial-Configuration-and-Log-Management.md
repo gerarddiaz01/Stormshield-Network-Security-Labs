@@ -1,7 +1,15 @@
 # 01 - Configuration Initiale et Gestion des Logs (Stormshield SNS)
 
+**Environnement :** Lab virtuel — Formation CSNA Stormshield (CyberUniversity x La Sorbonne)
+
 ## Objectif du Lab
 Ce lab couvre l'initialisation d'un pare-feu Stormshield Network Security (SNS) dans un environnement d'entreprise simulé. L'objectif est de sécuriser l'accès au plan d'administration (Management Plane), d'assurer la conformité temporelle (NTP) et d'optimiser le stockage des logs pour une surveillance SOC efficace.
+
+## Outils et Technologies
+* **Stormshield SNS** : Pare-feu UTM (Unified Threat Management)
+* **Interface Web d'administration** : Configuration via HTTPS
+* **CLI SSH** : Administration en ligne de commande
+* **NTP** : Synchronisation temporelle
 
 ---
 
@@ -14,7 +22,7 @@ J'ai segmenté le réseau en trois zones de sécurité distinctes pour respecter
 * **DMZ (Demilitarized) :** Zone isolée hébergeant les services publics (Web, Mail, DNS).
 * **WAN (Untrust) :** Zone externe non fiable (Internet).
 
-### 🗺️ Schéma Topologique
+### Schéma Topologique
 ![Architecture Topologique avec Zones](images/lab01/topology_lab1.png)
 
 *(Ce schéma illustre la segmentation réseau et l'adressage IP mis en place)*
@@ -131,6 +139,21 @@ Cette étape est indispensable pour assurer un retour à un état stable (Snapsh
 
 ![Sauvegarde Configuration](images/lab01/12-backup-download.png)
 *Génération et téléchargement du fichier de sauvegarde .na*
+
+---
+
+## 8. Implications pour un Analyste SOC
+
+Ce lab couvre les fondations d'une infrastructure de sécurité monitorable :
+
+**Synchronisation Temporelle (NTP)**
+Sans NTP, impossible de corréler des événements entre le firewall, les serveurs et le SIEM. Lors d'un incident, un écart de 5 minutes entre deux sources de logs peut rendre une investigation impossible.
+
+**Stratégie de Rétention des Logs**
+La réallocation des quotas (POP3 → Réseau) illustre un arbitrage courant en SOC : prioriser les logs à forte valeur forensique. Les connexions réseau sont souvent la première source consultée lors d'une investigation.
+
+**Sauvegarde de Configuration**
+En cas de compromission du firewall, une backup propre permet de restaurer rapidement un état sain — élément clé d'un plan de réponse aux incidents.
 
 ---
 *Fin du rapport de Lab 1.*

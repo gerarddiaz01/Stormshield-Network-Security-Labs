@@ -1,5 +1,7 @@
 # 03 - Configuration Réseau : Interfaces
 
+**Environnement :** Lab virtuel — Formation CSNA Stormshield (CyberUniversity x La Sorbonne)
+
 ## Objectif du Lab
 L'objectif de ce module est de configurer la connectivité réseau du pare-feu Stormshield pour interconnecter les différentes zones de l'infrastructure : le réseau public (WAN), la zone démilitarisée (DMZ) et le réseau interne (LAN). Cette étape transforme le boîtier en routeur central de l'architecture.
 

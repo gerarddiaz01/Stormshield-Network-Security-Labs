@@ -1,7 +1,14 @@
 # 02 - Gestion des Objets Réseaux (Network Objects Management)
 
+**Environnement :** Lab virtuel — Formation CSNA Stormshield (CyberUniversity x La Sorbonne)
+
 ## Objectif du Lab
 L'objectif de ce laboratoire est de structurer la base de données d'objets du pare-feu Stormshield. Cette étape est un prérequis indispensable avant la mise en place de politiques de sécurité (Filtrage et NAT). L'intervention couvre la création d'objets hôtes, réseaux, services, groupes, la configuration du DNS système, et l'automatisation via l'import/export CSV.
+
+## Outils et Technologies
+* **Stormshield SNS** : Pare-feu UTM (Unified Threat Management)
+* **Base d'objets Stormshield** : Gestion centralisée des assets réseau
+* **Import/Export CSV** : Automatisation et gestion de masse
 
 ---
 
@@ -125,6 +132,30 @@ J'ai réimplanté le fichier modifié. Le pare-feu a intégré les nouvelles ent
 
 ![Import réussi](images/lab02/import_csv.png)
 *Confirmation de l'importation réussie des nouveaux objets*
+
+---
+
+## 7. Implications pour un Analyste SOC
+
+Ce lab illustre l'importance d'une gestion rigoureuse des assets avant toute politique de sécurité :
+
+**Inventaire des Assets**
+Une base d'objets bien structurée est la fondation de toute politique de sécurité. 
+Sans inventaire clair des machines, réseaux et services, impossible de :
+- Rédiger des règles de filtrage précises
+- Investiguer un incident (quel objet correspond à cette IP ?)
+- Auditer la surface d'attaque
+
+**Nommage et Documentation**
+Les noms explicites (`srvdnspriv`, `grp_srv_priv`) facilitent la lecture des logs 
+et des règles. En investigation, voir "srvwebpriv → Internet" est plus parlant 
+que "172.16.3.11 → 0.0.0.0/0".
+
+**Gestion du Changement (CSV)**
+L'import CSV est puissant mais risqué. Le comportement d'écrasement peut 
+provoquer des incidents si mal maîtrisé. En environnement de production, 
+toute modification de la base d'objets devrait suivre un processus de 
+change management avec backup préalable.
 
 ---
 *Fin du rapport de Lab 2.*

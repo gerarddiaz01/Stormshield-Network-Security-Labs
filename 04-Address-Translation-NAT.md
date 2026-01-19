@@ -81,7 +81,7 @@ Cette approche minimise la surface d'attaque en n'exposant que le port stricteme
 
 ---
 
-## 5. Configuration Avancée : NAT Interne vers DMZ
+## 5. Configuration Avancée : Masquage du LAN vers la DMZ
 Dans une optique de durcissement (Hardening), j'ai ajouté une règle de NAT pour les flux provenant du LAN à destination de la DMZ.
 
 **Objectif :** Masquer le plan d'adressage du réseau utilisateur vis-à-vis des serveurs publics.
@@ -107,6 +107,9 @@ La mise en place du NAT impacte directement la visibilité et la surveillance du
 1.  **Obfuscation des sources :** Le NAT masque l'adresse IP source réelle. Lors de l'analyse d'incidents (Forensics), il est crucial de se rappeler que l'IP visible dans les logs externes (ou DMZ dans le cas du bonus) est celle du pare-feu, pas celle de l'attaquant ou de la machine infectée.
 2.  **Importance des logs de translation :** Il est impératif d'activer les traces (logs) sur les règles de NAT critiques. Sans cela, il est impossible de faire le lien entre une connexion sortante malveillante et la machine interne compromise ("Patient Zero").
 3.  **Validation ARP :** Lors de diagnostics réseau, l'absence de publication ARP sur des règles de NAT statique est une cause fréquente d'indisponibilité de service qu'un analyste doit savoir identifier rapidement.
+4. **Surface d'attaque :** Le PAT (redirection de port) expose moins que le BIMAP. 
+   En audit de sécurité, privilégier le PAT quand une seule application doit être 
+   accessible réduit le risque d'exploitation de services non intentionnels.
 
 ---
 *Fin du rapport de Lab 4.*

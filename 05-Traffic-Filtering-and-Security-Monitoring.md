@@ -62,7 +62,7 @@ Pour permettre l'administration interne et l'utilisation des serveurs de la DMZ,
 
 ![Règle d'accès LAN vers DMZ](images/lab05/regles_acces_lan_bleu.png)
 
-### 4. Surveillance de Sécurité et Configuration des Alarmes
+### 4. Surveillance SOC : Alarmes vs Logs
 Un pare-feu doit agir comme un outil de détection. J'ai configuré des règles spécifiques pour déclencher des **Alarmes** plutôt que de simples journaux. Cela permet une notification immédiate des activités suspectes, telles que :
 * Les scans ICMP (Ping) sur l'interface WAN.
 * Les tentatives d'accès au portail d'administration du pare-feu depuis l'internet public.

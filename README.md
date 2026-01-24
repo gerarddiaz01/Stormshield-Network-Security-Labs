@@ -30,7 +30,8 @@ Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pra
 * [03 - Configuration Réseau : Interfaces & Routage](./03-Network-Interfaces-and-Routing.md) : *Définition des zones (LAN/DMZ/WAN), configuration du routage statique et mise en place du Proxy DNS.*
 * [04 - Translation d'adresses (NAT)](./04-Address-Translation-NAT.md) : *Configuration du Masquerading (SNAT), publication de services via BIMAP et redirection de ports (PAT).*
 * [05 - Politique de Filtrage & Supervision de Sécurité](./05-Traffic-Filtering-and-Security-Monitoring.md) : *Implémentation du filtrage strict (LAN/DMZ), contrôles applicatifs (URL/GeoIP), configuration des traces et levée d'alarmes.*
-* *06 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
+* [06 - Filtrage de Contenu Web (HTTP & HTTPS)](./06-Content-Filtering-HTTP-HTTPS.md) : *Contrôle d'accès applicatif (Couche 7), stratégie de filtrage URL et inspection SSL/TLS (SNI) sans déchiffrement.*
+* *07 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
 
 ---
 

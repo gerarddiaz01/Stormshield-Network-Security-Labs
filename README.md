@@ -31,7 +31,7 @@ Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pra
 * [04 - Translation d'adresses (NAT)](./04-Address-Translation-NAT.md) : *Configuration du Masquerading (SNAT), publication de services via BIMAP et redirection de ports (PAT).*
 * [05 - Politique de Filtrage & Supervision de Sécurité](./05-Traffic-Filtering-and-Security-Monitoring.md) : *Implémentation du filtrage strict (LAN/DMZ), contrôles applicatifs (URL/GeoIP), configuration des traces et levée d'alarmes.*
 * [06 - Filtrage de Contenu Web (HTTP & HTTPS)](./06-Content-Filtering-HTTP-HTTPS.md) : *Contrôle d'accès applicatif (Couche 7), stratégie de filtrage URL et inspection SSL/TLS (SNI) sans déchiffrement.*
-* *07 - Infrastructure à Clés Publiques (PKI) & VPN (À venir)*
+* [07 - Authentification & Filtrage Basé sur l'Identité](./07-Authentication-and-Identity-Based-Filtering.md) : *Intégration de l'annuaire LDAP, configuration du portail captif (enrôlement), transition du filtrage IP vers le filtrage par identité (Layer 8) et délégation des droits d'administration.*
 
 ---
 

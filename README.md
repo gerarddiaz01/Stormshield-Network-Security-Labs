@@ -34,7 +34,7 @@ Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pra
 * [07 - Authentification & Filtrage Basé sur l'Identité](./07-Authentication-and-Identity-Based-Filtering.md) : *Intégration de l'annuaire LDAP, configuration du portail captif (enrôlement), transition du filtrage IP vers le filtrage par identité (Layer 8) et délégation des droits d'administration.*
 
 ### Connectivité Distante & VPN
-* [09 - Accès Distant Sécurisé (VPN SSL)](./Lab09_VPN_SSL_Client_Access.md) : *Mise en œuvre d'un VPN SSL Client-to-Site (OpenVPN), gestion des pools d'IP virtuels, configuration du Split/Full Tunneling, authentification des nomades et filtrage strict des flux tunnelés.*
+* [09 - Accès Distant Sécurisé (VPN SSL)](./09_VPN_SSL_Client_Access.md) : *Mise en œuvre d'un VPN SSL Client-to-Site (OpenVPN), gestion des pools d'IP virtuels, configuration du Split/Full Tunneling, authentification des nomades et filtrage strict des flux tunnelés.*
 
 ---
 

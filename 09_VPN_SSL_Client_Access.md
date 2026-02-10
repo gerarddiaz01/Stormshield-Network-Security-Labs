@@ -94,6 +94,12 @@ J'ai modifié les routes poussées pour inclure `Any` (Internet), forçant tout 
 
 Pour permettre la sortie vers Internet de ces flux encapsulés, j'ai dû configurer une règle de **NAT dynamique (Masquerading)**. Le trafic venant du VPN sort avec l'IP publique du Firewall.
 
+*Point de vigilance SOC* : L'activation du NAT (Masquerading) pour le trafic Internet des clients VPN a une conséquence majeure -> tout le trafic de navigation des télétravailleurs sortira avec l'adresse IP publique de l'entreprise.
+
+**Risque de réputation** : Si un poste compromis effectue des scans ou du téléchargement illégal, l'IP de l'entreprise sera blacklistée.
+
+**Attribution** : Les logs du fournisseur d'accès Internet (FAI) pointeront vers l'entreprise, rendant les logs internes du Firewall (association User <-> Trafic) juridiquement vitaux pour disculper l'infrastructure.
+
 ![Règle de NAT pour le VPN](images/lab09/nat_vpn_ssl.png)
 
 Enfin, j'ai appliqué une politique de filtrage URL stricte sur ce flux Web. L'objectif est de limiter l'accès aux catégories professionnelles (`IT`, `News`) et de bloquer le reste (ex: `Games`).
@@ -104,7 +110,9 @@ La règle de filtrage correspondante applique ce profil et active l'inspection I
 
 ![Règle de filtrage Web pour VPN](images/lab09/alert_orange_filtrage.png)
 
-*Note technique : Lors du test final, bien que le tunnel soit actif et les règles correctes, la navigation web a rencontré des difficultés liées à la résolution DNS. Dans un scénario réel, il serait impératif de forcer l'usage d'un DNS accessible (ex: DNS interne relayé ou DNS public) via la configuration VPN SSL pour garantir la résolution de noms à travers le tunnel.*
+*Résolution de problème (Troubleshooting DNS) : Lors des premiers tests de Full Tunneling, la connectivité IP était fonctionnelle (Ping OK) mais la navigation Web échouait. L'analyse a révélé que le client VPN tentait d'utiliser les DNS de sa carte réseau physique (locaux) qui n'étaient plus accessibles une fois le tunnel monté.*
+
+*Correction appliquée : J'ai configuré le service VPN SSL pour "pusher" explicitement les serveurs DNS (ceux de la DMZ ou publics comme 8.8.8.8) vers le client virtuel. Cela garantit que la résolution de noms transite bien par le tunnel chiffré, évitant au passage les fuites DNS (DNS Leaks).*
 
 ---
 

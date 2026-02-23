@@ -1,4 +1,4 @@
-# Rapport de Lab 7 : Authentification et Filtrage Basé sur l'Identité
+# Lab 07 : Authentification et Filtrage Basé sur l'Identité
 
 **Environnement :** Lab virtuel — Formation CSNA Stormshield (CyberUniversity x La Sorbonne)
 

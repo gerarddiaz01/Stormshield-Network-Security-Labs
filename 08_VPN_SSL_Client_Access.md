@@ -1,4 +1,4 @@
-# Rapport de Lab 9 : Implémentation et Sécurisation d'un VPN SSL Client-to-Site
+# Lab 08 : Implémentation et Sécurisation d'un VPN SSL Client-to-Site
 
 **Environnement :** Lab virtuel — Formation CSNA Stormshield (CyberUniversity x La Sorbonne)
 

@@ -1,49 +1,49 @@
-# 🛡️ Stormshield Network Security (CSNA Lab Configuration)
+# Stormshield Network Security (CSNA Lab Configuration)
 
-**Projet de déploiement et de sécurisation d'une infrastructure réseau basée sur des appliances Stormshield SNS.**
+![Certification](https://img.shields.io/badge/Certification-CSNA-success?style=flat-square)
+![Focus](https://img.shields.io/badge/Focus-Network_Security-005571?style=flat-square)
+![Vendor](https://img.shields.io/badge/Vendor-Stormshield-red?style=flat-square)
 
-Ce dépôt documente l'intégralité de mes laboratoires techniques réalisés dans le cadre de la préparation à la certification **CSNA (Certified Stormshield Network Administrator)**.
+**Deployment and hardening of a network infrastructure built on Stormshield SNS appliances.**
 
----
+This repository documents all the technical labs I completed while preparing for the **CSNA (Certified Stormshield Network Administrator)** certification.
 
-## Architecture du Lab
+> **Note on language:** I prepared and passed the CSNA within a French-language program. The procedure documents linked below are written in French. This README gives the full overview in English.
 
-| Composant | Rôle | Configuration |
+## Lab Architecture
+
+| Component | Role | Configuration |
 | :--- | :--- | :--- |
-| **Firewall** | Stormshield SNS (EVA) | Filtrage, NAT, IPS, VPN SSL |
-| **Zone LAN** | Trust | `192.168.1.0/24` - Administration |
-| **Zone DMZ** | Services Publics | `172.16.0.0/24` - Web & DNS |
-| **WAN** | Untrust | Accès Internet (Simulé) |
+| **Firewall** | Stormshield SNS (EVA) | Filtering, NAT, IPS, SSL VPN |
+| **LAN Zone** | Trust | `192.168.1.0/24`, administration |
+| **DMZ Zone** | Public services | `172.16.0.0/24`, Web & DNS |
+| **WAN** | Untrust | Internet access (simulated) |
+
+## Technical Documentation (My Procedures)
+
+The operational guides I wrote, based on ANSSI best practices and the official Stormshield documentation:
+
+### Initialization & System
+- [00 - Standard Deployment Procedures](./00-Deployment-Standard-Procedures.md) : *initial hardening, breaking the default bridge, boot partition management.*
+- [01 - Initial Configuration & Log Management](./01-Initial-Configuration-and-Log-Management.md) : *securing the administration plane and log retention strategy.*
+
+### Architecture & Security
+- [02 - Network Objects Management](./02-Network-Objects-Management.md) : *structuring the object base, creating custom services, and automation (CSV import).*
+- [03 - Network Configuration: Interfaces & Routing](./03-Network-Interfaces-and-Routing.md) : *defining zones (LAN/DMZ/WAN), static routing, and DNS Proxy setup.*
+- [04 - Address Translation (NAT)](./04-Address-Translation-NAT.md) : *Masquerading (SNAT), service publishing via BIMAP, and port redirection (PAT).*
+- [05 - Filtering Policy & Security Monitoring](./05-Traffic-Filtering-and-Security-Monitoring.md) : *strict filtering (LAN/DMZ), application controls (URL/GeoIP), log configuration, and alarm raising.*
+- [06 - Web Content Filtering (HTTP & HTTPS)](./06-Content-Filtering-HTTP-HTTPS.md) : *application-layer access control (Layer 7), URL filtering strategy, and SSL/TLS inspection (SNI) without decryption.*
+- [07 - Authentication & Identity-Based Filtering](./07-Authentication-and-Identity-Based-Filtering.md) : *LDAP directory integration, captive portal (enrollment), the shift from IP filtering to identity filtering (Layer 8), and administration rights delegation.*
+
+### Remote Connectivity & VPN
+- [08 - Secure Remote Access (SSL VPN)](./08_VPN_SSL_Client_Access.md) : *Client-to-Site SSL VPN (OpenVPN), virtual IP pool management, Split/Full Tunneling, roaming user authentication, and strict filtering of tunneled flows.*
+
+## Skills Demonstrated
+
+- **SNS Administration:** command of the Web interface and the CLI recovery commands.
+- **Network Segmentation:** building airtight security zones (LAN/DMZ/WAN).
+- **Risk Management:** applying least privilege to traffic flows.
+- **Maintenance:** firmware lifecycle management (Active/Passive partitions).
 
 ---
-
-## Documentation Technique (Mes Procédures)
-
-Voici les guides d'exploitation que j'ai rédigés basés sur les meilleures pratiques de l'ANSSI et la documentation officielle :
-
-### Initialisation & Système
-* [00 - Procédures Standards de Déploiement](./00-Deployment-Standard-Procedures.md) : *Hardening initial, cassage du bridge par défaut, gestion des partitions de boot.*
-* [01 - Configuration Initiale & Logs](./01-Initial-Configuration-and-Log-Management.md) : *Sécurisation du plan d'administration et stratégie de rétention des traces.*
-
-### Architecture & Sécurité
-* [02 - Gestion des Objets Réseaux](./02-Network-Objects-Management.md) : *Structuration de la base d'objets, création de services personnalisés et automatisation (Import CSV).*
-* [03 - Configuration Réseau : Interfaces & Routage](./03-Network-Interfaces-and-Routing.md) : *Définition des zones (LAN/DMZ/WAN), configuration du routage statique et mise en place du Proxy DNS.*
-* [04 - Translation d'adresses (NAT)](./04-Address-Translation-NAT.md) : *Configuration du Masquerading (SNAT), publication de services via BIMAP et redirection de ports (PAT).*
-* [05 - Politique de Filtrage & Supervision de Sécurité](./05-Traffic-Filtering-and-Security-Monitoring.md) : *Implémentation du filtrage strict (LAN/DMZ), contrôles applicatifs (URL/GeoIP), configuration des traces et levée d'alarmes.*
-* [06 - Filtrage de Contenu Web (HTTP & HTTPS)](./06-Content-Filtering-HTTP-HTTPS.md) : *Contrôle d'accès applicatif (Couche 7), stratégie de filtrage URL et inspection SSL/TLS (SNI) sans déchiffrement.*
-* [07 - Authentification & Filtrage Basé sur l'Identité](./07-Authentication-and-Identity-Based-Filtering.md) : *Intégration de l'annuaire LDAP, configuration du portail captif (enrôlement), transition du filtrage IP vers le filtrage par identité (Layer 8) et délégation des droits d'administration.*
-
-### Connectivité Distante & VPN
-* [08 - Accès Distant Sécurisé (VPN SSL)](./08_VPN_SSL_Client_Access.md) : *Mise en œuvre d'un VPN SSL Client-to-Site (OpenVPN), gestion des pools d'IP virtuels, configuration du Split/Full Tunneling, authentification des nomades et filtrage strict des flux tunnelés.*
-
----
-
-## 🛠️ Compétences Démontrées
-
-* **Administration SNS :** Maîtrise de l'interface Web et des commandes CLI de secours.
-* **Segmentation Réseau :** Création de zones de sécurité étanches (LAN/DMZ/WAN).
-* **Gestion des Risques :** Application du principe de moindre privilège sur les flux.
-* **Maintenance :** Gestion du cycle de vie des firmwares (Active/Passive partitions).
-
----
-*Ce projet est réalisé sur un environnement de virtualisation personnel.*
+*This project was carried out on a personal virtualization environment.*
